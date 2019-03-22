@@ -8,7 +8,7 @@
         <div class="sidenav-item sidenav-rule">
             <router-link to="/rule">{{ $t("ap.bigtab.b") }}</router-link>
         </div>
-        <div class="sidenav-item sidenav-rule">
+        <div class="sidenav-item sidenav-mock">
             <router-link to="/request">{{ $t("ap.bigtab.d") }}</router-link>
         </div>
         <!--<div class="sidenav-item sidenav-mock">-->

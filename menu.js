@@ -115,7 +115,7 @@ const template = [
     submenu: [
       {
         label: 'Learn More',
-        click () { require('electron').shell.openExternal('https://fwon.github.io/e-anyproxy/help.html') }
+        click () { require('electron').shell.openExternal('https://github.com/phantom0301/PTEye') }
       }
     ]
   }

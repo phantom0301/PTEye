@@ -13,7 +13,7 @@ let loadingParams = {
 let mainParams = {
     width: 1300,
     height: 780,
-    icon: __dirname + '/icon.png',
+    icon: __dirname + '/icon1.png',
     // titleBarStyle: 'hidden-inset',
     backgroundColor: '#fff',
     show: false
@@ -26,12 +26,13 @@ function createWindow() {
     mainWindow.setTitle(require('./package.json').name);
 
     //setting in .vscode/launch.json
-    if (process.env.NODE_ENV != 'development') {
+    if (process.env.NODE_ENV === 'development') {
         console.log('develop');
         mainWindow.loadURL('http://localhost:8099');
         mainWindow.webContents.openDevTools();
     } else {
-        mainWindow.loadURL(`file://${__dirname}/client/index.html`); 
+        mainWindow.loadURL(`file://${__dirname}/client/index.html`);
+        mainWindow.webContents.openDevTools();
     }
 
     mainWindow.webContents.on('did-finish-load', () => {

@@ -95,7 +95,8 @@ export default {
                 port: '8001',
                 forceProxyHttps: false,
                 global: false,
-                throttle: null
+                throttle: null,
+                ruleid: null
             },
             throttleOptions: [
                 {
@@ -156,8 +157,11 @@ export default {
         },
         startProxy() {
             const self = this;
+            console.log(this.currentRule.id);
             if (this.currentRule.id) {
                 this.setting.ruleid = this.currentRule.id;
+            }else{
+                this.setting.ruleid = null;
             }
             if (this.mockPaths && this.mockPaths.length) {
                 this.setting.mock = this.mockPaths;

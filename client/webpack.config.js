@@ -7,10 +7,9 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),        //真实存放路径
-    publicPath: isPro ? 
-                path.resolve(__dirname, './dist') : //发布引用路径
-                '/dist/',                           //开发引用路径
-    filename: 'build.js'
+    publicPath: isPro ? 'D:/projects/github/PTEye/client/dist':'/dist/' ,//发布引用路径
+    //             ,                           //开发引用路径
+    filename: 'build.js',
   },
   module: {
     rules: [
@@ -52,7 +51,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
         loader: 'file-loader',
         query: {
-          name: '/[name].[ext]'
+          name: '/[name].[ext]',
         }
       }
     ]
@@ -68,6 +67,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  console.log(path.resolve(__dirname, './dist'));
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([

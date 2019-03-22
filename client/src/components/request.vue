@@ -1,7 +1,10 @@
 <template>
     <div id="request">
         <div class="request-path-editor__left">
-            <el-button type="primary" :plain="true" icon="plus" @click="sendRequest">{{ $t("ap.request.addbtn") }}</el-button>
+            <el-row :gutter="20">
+                <el-button type="primary" :plain="true" icon="plus" @click="sendRequest">{{ $t("ap.request.addbtn") }}</el-button>
+                <el-button type="primary" :plain="true" icon="plus" @click="clearRequest">{{ $t("ap.request.clear") }}</el-button>
+            </el-row>
             <codemirror v-model="request" :options="editorOption" ></codemirror>
         </div>
         <div class="request-path-editor__left">
@@ -102,6 +105,11 @@
                 var _ = this.$remoteApi.sendRequest(this.request_url,this.request,  (response)=> {
                     this.response = response;
                 })|| '';
+            },
+            clearRequest(){
+              this.request = '';
+              this.request_url = '';
+              this.response = '';
             },
             deleteProject(item) {
                 this.$confirm(this.$t("ap.message.MSG_MOCK_CONFIRM_DEL"), {
@@ -284,6 +292,7 @@
     }
 
     .CodeMirror {
+        margin-top: 20px;
         border: 1px solid #eee;
         height: 500px;
     }
