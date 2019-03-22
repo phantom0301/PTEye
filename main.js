@@ -32,7 +32,6 @@ function createWindow() {
         mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadURL(`file://${__dirname}/client/index.html`);
-        mainWindow.webContents.openDevTools();
     }
 
     mainWindow.webContents.on('did-finish-load', () => {

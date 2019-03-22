@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "pack": "electron-packager . Anyproxy --out=pack --overwrite --ignore=client/node_modules --icon=icon.icns"
+    "pack": "electron-packager . PTeye --out=pack --overwrite --ignore=client/node_modules --icon=icon.icns"
   },
   "repository": {
     "type": "git",
